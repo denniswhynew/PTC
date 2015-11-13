@@ -1,6 +1,6 @@
 #include<iostream>
 using namespace std;
-char fpoint[2][2][200];
+char fpoint[2][2][20000];
 int main()
 {
 	while (1)
@@ -84,7 +84,7 @@ int main()
 			}
 		}
 
-		
+
 		if (i[0][0] < i[1][0])
 		{
 			int j = 0;
@@ -104,7 +104,7 @@ int main()
 			{
 				j %= i[0][1];
 			}
-			
+
 			for (int k = 0; k < j; k++)
 			{
 				fpoint[0][1][k+i[0][1]]= fpoint[0][1][k];
@@ -133,7 +133,7 @@ int main()
 			{
 				j %= i[1][1];
 			}
-			
+
 			for (int k = 0; k < j; k++)
 			{
 				fpoint[1][1][k + i[1][1]] = fpoint[1][1][k];
@@ -176,7 +176,7 @@ int main()
 			i[0][1] = i[1][1];
 			i[1][1] = 0;
 		}
-		
+
 
 
 		int carry2 = carry;
@@ -207,7 +207,7 @@ int main()
 				fpoint[0][0][j] %= 10;
 			}
 		}*/
-		
+
 
 		//shorter
 		for (int j = 1; j <= i[0][1] * i[1][1]; j++)
@@ -216,7 +216,7 @@ int main()
 			int isshort = 1;
 			for (int k = 1; k < i[0][1] * i[1][1] / j; k++)
 			{
-				
+
 				for (int l = 0; l < j; l++)
 				{
 					if (fpoint[0][1][l] != fpoint[0][1][l + j*k])
@@ -233,7 +233,7 @@ int main()
 				break;
 			}
 		}
-		
+
 		while (i[0][0]&&fpoint[0][0][i[0][0] - 1] == fpoint[0][1][i[0][1] - 1])
 		{
 			for (int j = i[0][1] - 1; j > 0; j--)
